@@ -1,12 +1,14 @@
 const ExpenseItem = (props) => {
     const { item, deleteExpense ,editExpense} = props
-    const { title, amount, id } = item
+    const { title, amount, _id } = item
     const type = amount < 0 ? "negative" : "positive"
     const handledelete = () => {
-        deleteExpense(id)
+        deleteExpense(_id)
 
     }
     const handleedit=()=>{
+   
+        
         editExpense(item)
     }
     return (

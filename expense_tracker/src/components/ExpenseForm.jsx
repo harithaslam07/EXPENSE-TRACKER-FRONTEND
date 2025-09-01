@@ -26,7 +26,7 @@ const ExpenseForm = (props) => {
         }
         else if (title && amount) {
             if(edititem){
-                updateExpense(edititem.id,title,amount)
+                updateExpense(edititem._id,title,amount)
                 setEdititem("")
                  toast.success(" Transaction Updated succesfully")
             }
