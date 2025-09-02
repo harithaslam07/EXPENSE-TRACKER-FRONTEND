@@ -8,7 +8,7 @@ const Container = () => {
     const [transactions, settransactions] = useState(INITIAL_EXPENSE)
     const [edititem, setEdititem] = useState(null)
     const addExpense = async (title, amount) => {
-        await fetch("http://localhost:4000/insert",
+        await fetch("https://expense-tracker-backend-pwpf.onrender.com/insert",
             {
                 method: "POST",
                 headers: { "content-type": "application/json" },
@@ -23,7 +23,7 @@ const Container = () => {
     }, [])
 
     const getExpense = async () => {
-        const res = await fetch("http://localhost:4000/getdata", {
+        const res = await fetch("https://expense-tracker-backend-pwpf.onrender.com/getdata", {
             method: 'GET'
         })
         const data = await res.json()
@@ -31,7 +31,7 @@ const Container = () => {
 
     }
     const deleteExpense = async (_id) => {
-        await fetch("http://localhost:4000/deletedata",
+        await fetch("https://expense-tracker-backend-pwpf.onrender.com/deletedata",
             {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
@@ -45,7 +45,7 @@ const Container = () => {
 
     }
     const updateExpense = async (_id, title, amount) => {
-        await fetch("http://localhost:4000/editdata",
+        await fetch("https://expense-tracker-backend-pwpf.onrender.com/editdata",
             {
                 method: "PUT",
                 headers: { "content-type": "application/json" },
